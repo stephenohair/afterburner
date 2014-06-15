@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="HardwareMonitor" type="HardwareMonitorType"/>
+  <xs:complexType name="HardwareMonitorHeaderType">
+    <xs:sequence>
+      <xs:element type="xs:int" name="signature"/>
+      <xs:element type="xs:int" name="version"/>
+      <xs:element type="xs:byte" name="headerSize"/>
+      <xs:element type="xs:byte" name="entryCount"/>
+      <xs:element type="xs:short" name="entrySize"/>
+      <xs:element type="xs:int" name="time"/>
+      <xs:element type="xs:byte" name="gpuEntryCount"/>
+      <xs:element type="xs:short" name="gpuEntrySize"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HardwareMonitorEntryType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="srcName"/>
+      <xs:element type="xs:string" name="srcUnits"/>
+      <xs:element type="xs:string" name="localizedSrcName"/>
+      <xs:element type="xs:string" name="localizedSrcUnits"/>
+      <xs:element type="xs:string" name="recommendedFormat"/>
+      <xs:element type="xs:float" name="data"/>
+      <xs:element type="xs:byte" name="minLimit"/>
+      <xs:element type="xs:short" name="maxLimit"/>
+      <xs:element type="xs:string" name="flags"/>
+      <xs:element type="xs:long" name="gpu"/>
+      <xs:element type="xs:short" name="srcId"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HardwareMonitorEntriesType">
+    <xs:sequence>
+      <xs:element type="HardwareMonitorEntryType" name="HardwareMonitorEntry" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HardwareMonitorGpuEntryType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="gpuId"/>
+      <xs:element type="xs:string" name="family"/>
+      <xs:element type="xs:string" name="device"/>
+      <xs:element type="xs:string" name="driver"/>
+      <xs:element type="xs:string" name="BIOS"/>
+      <xs:element type="xs:byte" name="memAmount"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HardwareMonitorGpuEntriesType">
+    <xs:sequence>
+      <xs:element type="HardwareMonitorGpuEntryType" name="HardwareMonitorGpuEntry" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HardwareMonitorType">
+    <xs:sequence>
+      <xs:element type="HardwareMonitorHeaderType" name="HardwareMonitorHeader"/>
+      <xs:element type="HardwareMonitorEntriesType" name="HardwareMonitorEntries"/>
+      <xs:element type="HardwareMonitorGpuEntriesType" name="HardwareMonitorGpuEntries"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
