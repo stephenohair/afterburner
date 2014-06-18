@@ -23,13 +23,10 @@ The MSI Afterburner GUI & Remote Server application are available on the [MSI Af
 
 ### How do I get set up? ###
 
-Install JDK 8.
-Install maven 3.0
-Install the appropriate Arduino IDE and drivers for your device
-Install MSI Afterburner & MSI Afterburner Remote Server
-
-* Configuration
-* Dependencies
+* Install JDK 8.
+* Install maven 3.0
+* Install the appropriate Arduino IDE and drivers for your device
+* Install MSI Afterburner & MSI Afterburner Remote Server
 
 ### Configuration ###
 Modify the configuration file /src/main/resources/configuration.properties and set the following : 
