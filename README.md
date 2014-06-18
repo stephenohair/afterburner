@@ -6,6 +6,7 @@ This repo contains the Java component of the afterburner-client. You can run thi
 ### What does it do? ###
 It sends MSI Afterburner monitoring statistics to an Ardiuno based device over USB serial.
 
+
 ### How does it work? ###
 There are three parts to this project :
 
