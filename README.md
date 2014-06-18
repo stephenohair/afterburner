@@ -34,9 +34,9 @@ Install MSI Afterburner & MSI Afterburner Remote Server
 Modify the configuration file /src/main/resources/configuration.properties and set the following : 
 
 * **IP address and port** - that the MSI Afterburner Remote Server is listening on. 
-* Password - I've included the default password that is provided by the Remote Server but you can modify this in the app and adjust it here also.
-* Comms Port - this is the port that the Arduino devcie is listening on. For windows it would be something like "COMM1" on linux it'd be something like /dev/XYZBLAH.
-* Maxmium characters for a serial message : by default I've left it at 32 since I used a 16x2 character display. 
+* **Password** - I've included the default password that is provided by the Remote Server but you can modify this in the app and adjust it here also.
+* **Comms Port** - this is the port that the Arduino devcie is listening on. For windows it would be something like "COMM1" on linux it'd be something like /dev/XYZBLAH.
+* **Maxmium characters for a serial message** : by default I've left it at 32 since I used a 16x2 character display. 
 
 ### Compiling ###
 To compile run : 
