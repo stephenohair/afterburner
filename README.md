@@ -73,10 +73,11 @@ The MessasgeWriter class is specifically coded to display 4 items on a screen ea
 
 The default message the MessageWriter sends will contain stats for :
 
-* FPS
-* GPU1
-* CPU
-* GPU2
+* FPS - framerate
+* GPU1 - gpu 1 load percentage
+* GPU2 - gpu 2 load percentage
+* CPU - average cpu load for all cores
+* TMP - average cpu temp for all cores
 
 It looks like this :
 
