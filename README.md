@@ -107,6 +107,8 @@ CPU:99  RAM:2305
 ### TODO ###
 * Make the MessageWriter configurable for multiple display sizes
 * Use maven-assembly-plugin for jar with dependency usage
+* Add configurable log level
+* Make conifguration use an external configuration and configure a default config
 
 ### Who do I talk to? ###
 
