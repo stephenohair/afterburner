@@ -109,6 +109,7 @@ CPU:99  RAM:2305
 * Use maven-assembly-plugin for jar with dependency usage
 * Add configurable log level
 * Make conifguration use an external configuration and configure a default config
+* Add a simple swing gui
 
 ### Who do I talk to? ###
 
