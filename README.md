@@ -15,6 +15,10 @@ There are three parts to this project :
 2. My afterburner-client which is installed on the Windows PC to be monitored (this project code)
 3. MSI Afterburner GUI & MSI Afterburner Remote Server installed on the Windows PC to be monitored
 
+This basic diagram attempts to describe those parts :
+
+![afterburner-client.png](https://bitbucket.org/repo/anxBzb/images/2579804272-afterburner-client.png)
+
 It sends serial messages over a configured comms port and these messages can be used however the ardiuno device likes i.e. LCD display, LEDs, speaker alerts, fan power control module, your imagination. The ardiuno coding part is for you to write depending on what stats it receives. I've just used the simple LCD serial example provided by Ardiuno. This was perfect for my device where I just wanted to display any receved serial messages straight to my LCD 16x2 character display.
 
 The MSI Afterburner GUI & Remote Server application are available on the [MSI Afterburner website](http://event.msi.com/vga/afterburner/overview.htm). This code is currently capable of interfacing with MSI Afterburner versions : 
