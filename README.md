@@ -117,3 +117,10 @@ CPU:99  RAM:2305
 ### Who do I talk to? ###
 
 * Stephen O'Hair - stephen.ohair@gmail.com
+
+### More Ardiuno Pics ###
+I used a Teensy to build this device.
+
+![IMG_20140616_225252.jpg](https://bitbucket.org/repo/anxBzb/images/2893224317-IMG_20140616_225252.jpg)
+![IMG_20140616_225351.jpg](https://bitbucket.org/repo/anxBzb/images/198268459-IMG_20140616_225351.jpg)
+![IMG_20140616_225320.jpg](https://bitbucket.org/repo/anxBzb/images/2564839505-IMG_20140616_225320.jpg)
