@@ -1,5 +1,8 @@
 # Afterburner-Client 
 
+### Licensing & Copyright ###
+The code found under this repository falls under GPL v3 licensing. Please see LICENSE.TXT for more information. Use of the MSI Afterburner software including extensions/tools fall under their own respective license(s) as defined by Micro-Star International.
+
 ### What is this repository for? ###
 This repo contains the Java component of the afterburner-client. You can run this on either Linux/Windows and it connects to both MSI Afterburner's Remote Server PC application and an Arduino device over serial. 
 
