@@ -119,7 +119,7 @@ CPU:99  RAM:2305
 * Stephen O'Hair - stephen.ohair@gmail.com
 
 ### More Ardiuno Pics ###
-I used a Teensy to build this device.
+I used a Teensy to build this device. The plastic housing is an old ipod nano box and the stand is a cheap soldering iron stand. I cut out cardboard templates for the front and back and sealed it with black electrical tape.
 
 ![IMG_20140616_225252.jpg](https://bitbucket.org/repo/anxBzb/images/2893224317-IMG_20140616_225252.jpg)
 ![IMG_20140616_225351.jpg](https://bitbucket.org/repo/anxBzb/images/198268459-IMG_20140616_225351.jpg)
