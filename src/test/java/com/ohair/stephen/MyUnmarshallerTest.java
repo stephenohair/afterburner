@@ -28,7 +28,6 @@ public class MyUnmarshallerTest {
 		InputStream is = MyUnmarshallerTest.class.getClassLoader()
 				.getResourceAsStream("sample-dual-gfx.xml");
 		HardwareMonitorType hmt = unmarshaller.unmarshal(is);
-		Util.printHardwareMonitor(hmt);
 		assertNotNull(hmt);
 	}
 

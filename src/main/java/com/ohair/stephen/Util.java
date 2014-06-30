@@ -12,18 +12,25 @@ public class Util {
 		List<HardwareMonitorGpuEntryType> gpuEntries = hmt
 				.getHardwareMonitorGpuEntries().getHardwareMonitorGpuEntry();
 		for (HardwareMonitorGpuEntryType gpu : gpuEntries) {
-			System.out.println("gpu.BIOS=" + gpu.getBIOS());
-			System.out.println("gpu.Device=" + gpu.getDevice());
-			System.out.println("gpu.Family=" + gpu.getFamily());
-			System.out.println("gpu.Driver=" + gpu.getDriver());
-			System.out.println("gpu.ID=" + gpu.getGpuId());
-			System.out.println("gpu.Memory.MB=" + gpu.getMemAmount());
+			App.getController().appendTxtAreaLogOutput(
+					"gpu.BIOS=" + gpu.getBIOS());
+			App.getController().appendTxtAreaLogOutput(
+					"gpu.Device=" + gpu.getDevice());
+			App.getController().appendTxtAreaLogOutput(
+					"gpu.Family=" + gpu.getFamily());
+			App.getController().appendTxtAreaLogOutput(
+					"gpu.Driver=" + gpu.getDriver());
+			App.getController().appendTxtAreaLogOutput(
+					"gpu.ID=" + gpu.getGpuId());
+			App.getController().appendTxtAreaLogOutput(
+					"gpu.Memory.MB=" + gpu.getMemAmount());
 		}
 
 		List<HardwareMonitorEntryType> entries = hmt
 				.getHardwareMonitorEntries().getHardwareMonitorEntry();
 		for (HardwareMonitorEntryType entry : entries) {
-			System.out.println(entry.getSrcName() + "=" + entry.getData());
+			App.getController().appendTxtAreaLogOutput(
+					entry.getSrcName() + "=" + entry.getData());
 		}
 	}
 }
