@@ -50,10 +50,10 @@ To compile run :
 ```
 #!java
 
-mvn clean install
+mvn clean jfx:jar
 ```
 
-This will create an executable JAR which you can copy to the Windows PC running MSI Afterburner & Remote Server.
+This will create an executable JAR under '''target/jfx/app''' and a lib directory under '''target/jfx/app/lib'''. You will need to copy both the jar AND the lib directory to the Windows PC running MSI Afterburner & Remote Server in order to run this client application.
 
 ### Running the Application ###
 
@@ -65,7 +65,7 @@ Open up a Windows command prompt and run the jar.
 ```
 #!java
 
-java.exe -jar afterburner-client-one-jar.jar
+java.exe -jar afterburner-client-1.0.0-SNAPSHOT-jfx.jar
 ```
 
 Observe the terminal output and ensure that you not only see key/value pair listings of Afterburner stats but that it's able to access and publish to the configured comms port.
