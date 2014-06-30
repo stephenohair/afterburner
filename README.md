@@ -65,7 +65,7 @@ Open up a Windows command prompt and run the jar.
 ```
 #!java
 
-java.exe -jar afterburner-client-1.0.0-SNAPSHOT-jfx.jar
+javaw.exe -jar afterburner-client-1.0.0-SNAPSHOT-jfx.jar
 ```
 
 Observe the terminal output and ensure that you not only see key/value pair listings of Afterburner stats but that it's able to access and publish to the configured comms port.
