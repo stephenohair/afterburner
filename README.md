@@ -26,8 +26,8 @@ It sends serial messages over a configured comms port and these messages can be 
 
 The MSI Afterburner GUI & Remote Server application are available on the [MSI Afterburner website](http://event.msi.com/vga/afterburner/overview.htm). This code is currently capable of interfacing with MSI Afterburner versions : 
 
-* MSI Afterburner GUI Version 3.0.1
-* MSI Afterburner Remote Server v2.0.50727
+* MSI Afterburner GUI Version 4.0.0.4606
+* MSI Afterburner Remote Server v1.2.0.0
 
 ### How do I get set up? ###
 
