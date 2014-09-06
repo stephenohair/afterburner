@@ -45,7 +45,7 @@ Modify the configuration file /src/main/resources/configuration.properties and s
 * **Maxmium characters for a serial message** : by default I've left it at 32 since I used a 16x2 character display. 
 
 ### Serial Libraries Linux ###
-In order to access the serial comms port for Linux you need to install librxtxjava and you need to grant permissions for access on that port. In the case of the Teensy device I used I had to add the udev rules specified on the Teensy website : https://www.pjrc.com/teensy/49-teensy.rules
+This is only required if yo plan to run this on a Linux box and remotely access your gaming PC. In order to access the serial comms port for Linux you need to install librxtxjava and you need to grant permissions for access on that port. In the case of the Teensy device I used I had to add the udev rules specified on the Teensy website : https://www.pjrc.com/teensy/49-teensy.rules
 
 To install the serial linux libraries:
 
