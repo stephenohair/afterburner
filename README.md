@@ -44,6 +44,17 @@ Modify the configuration file /src/main/resources/configuration.properties and s
 * **Comms Port** - this is the port that the Arduino devcie is listening on. For windows it would be something like "COMM1" on linux it'd be something like /dev/XYZBLAH.
 * **Maxmium characters for a serial message** : by default I've left it at 32 since I used a 16x2 character display. 
 
+### Serial Libraries Linux ###
+In order to access the serial comms port for Linux you need to install librxtxjava and you need to grant permissions for access on that port. In the case of the Teensy device I used I had to add the udev rules specified on the Teensy website : https://www.pjrc.com/teensy/49-teensy.rules
+
+To install the serial linux libraries:
+
+#!bash
+
+sudo apt-get install librxtx-java
+
+You then make a reference to RXTXcomm.jar on your classpath which is found under /usr/share/java/RXTXcomm.jar.
+
 ### Compiling ###
 To compile run : 
 
@@ -112,10 +123,9 @@ CPU:99  RAM:2305
 
 ### TODO ###
 * Make the MessageWriter configurable for multiple display sizes
-* Use maven-assembly-plugin for jar with dependency usage
 * Add configurable log level
-* Make conifguration use an external configuration and configure a default config
-* Add a simple swing gui
+* Make configuration use an external configuration and configure a default config
+* Add a simple JavaFX gui
 
 ### Who do I talk to? ###
 

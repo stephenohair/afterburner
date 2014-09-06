@@ -13,6 +13,7 @@ public class App extends Application {
 
 	private static MainController controller;
 
+	@Override
 	public void start(Stage primaryStage) {
 		try {
 

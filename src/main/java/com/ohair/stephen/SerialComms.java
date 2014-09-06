@@ -5,11 +5,11 @@ import jssc.SerialPortException;
 
 public class SerialComms {
 
-	private SerialPort port;
-	private int baudRate;
-	private int stopBits;
-	private int dataBits;
-	private int parity;
+	private final SerialPort port;
+	private final int baudRate;
+	private final int stopBits;
+	private final int dataBits;
+	private final int parity;
 
 	public SerialComms(Configuration config) {
 		port = new SerialPort(config.getSerialPort());

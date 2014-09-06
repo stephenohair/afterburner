@@ -9,28 +9,24 @@ import com.ohair.stephen.jaxb.HardwareMonitorType;
 public class Util {
 
 	public static void printHardwareMonitor(HardwareMonitorType hmt) {
+		MainController mc = App.getController();
 		List<HardwareMonitorGpuEntryType> gpuEntries = hmt
 				.getHardwareMonitorGpuEntries().getHardwareMonitorGpuEntry();
 		for (HardwareMonitorGpuEntryType gpu : gpuEntries) {
-			App.getController().appendTxtAreaLogOutput(
-					"gpu.BIOS=" + gpu.getBIOS());
-			App.getController().appendTxtAreaLogOutput(
-					"gpu.Device=" + gpu.getDevice());
-			App.getController().appendTxtAreaLogOutput(
-					"gpu.Family=" + gpu.getFamily());
-			App.getController().appendTxtAreaLogOutput(
-					"gpu.Driver=" + gpu.getDriver());
-			App.getController().appendTxtAreaLogOutput(
-					"gpu.ID=" + gpu.getGpuId());
-			App.getController().appendTxtAreaLogOutput(
-					"gpu.Memory.MB=" + gpu.getMemAmount());
+
+			mc.appendTxtAreaLogOutput("gpu.BIOS=" + gpu.getBIOS());
+			mc.appendTxtAreaLogOutput("gpu.Device=" + gpu.getDevice());
+			mc.appendTxtAreaLogOutput("gpu.Family=" + gpu.getFamily());
+			mc.appendTxtAreaLogOutput("gpu.Driver=" + gpu.getDriver());
+			mc.appendTxtAreaLogOutput("gpu.ID=" + gpu.getGpuId());
+			mc.appendTxtAreaLogOutput("gpu.Memory.MB=" + gpu.getMemAmount());
 		}
 
 		List<HardwareMonitorEntryType> entries = hmt
 				.getHardwareMonitorEntries().getHardwareMonitorEntry();
 		for (HardwareMonitorEntryType entry : entries) {
-			App.getController().appendTxtAreaLogOutput(
-					entry.getSrcName() + "=" + entry.getData());
+			mc.appendTxtAreaLogOutput(entry.getSrcName() + "="
+					+ entry.getData());
 		}
 	}
 }

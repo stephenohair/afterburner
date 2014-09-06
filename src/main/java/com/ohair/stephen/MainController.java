@@ -2,11 +2,11 @@ package com.ohair.stephen;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.Timer;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,13 +26,15 @@ public class MainController implements Initializable {
 	private TextArea txtAreaLogOutput;
 	@FXML
 	private TextField txtFieldMessage;
+	@FXML
+	private Button btnClear;
 
-	private Configuration config;
+	private final Configuration config;
 	private StatsRetriever timerTask;
 	private Timer timer;
 	private final SimpleDateFormat sdf = new SimpleDateFormat(
 			"FF:MM:yyyy-hh:mm:ss:SSS");
-	private SerialComms comms;
+	private final SerialComms comms;
 
 	public MainController() {
 		config = new Configuration();
@@ -49,14 +51,18 @@ public class MainController implements Initializable {
 		timer = new Timer(true);
 		timer.scheduleAtFixedRate(timerTask, 0,
 				config.getRefreshIntervalInMillis());
+		System.out.println("Timer task scheduled to repeat every "
+				+ config.getRefreshIntervalInMillis() + "ms");
 	}
 
 	public void stop(ActionEvent event) {
 		timer.cancel();
+		System.out.println("Timer task finished");
 		setStartEnabled(true);
 	}
 
 	public void sendTestMessage(ActionEvent event) {
+
 		String msg = txtFieldMessage.getText();
 		appendTxtAreaLogOutput("sending msg [" + config.getSerialConfig()
 				+ ", msg=\"" + msg + "\"]");
@@ -73,7 +79,24 @@ public class MainController implements Initializable {
 		}
 	}
 
-	public void appendTxtAreaLogOutput(String s) {
-		txtAreaLogOutput.appendText("\n" + sdf.format(new Date()) + " - " + s);
+	public void clearLog() {
+		Platform.runLater(new Runnable() {
+			@Override
+			public void run() {
+				txtAreaLogOutput.clear();
+			}
+		});
+	}
+
+	public void appendTxtAreaLogOutput(final String s) {
+		Platform.runLater(new Runnable() {
+			@Override
+			public void run() {
+				if (s != null && !s.isEmpty())
+					txtAreaLogOutput.appendText("\n" + sdf.format(new Date())
+							+ " - " + s);
+			}
+		});
+
 	}
 }

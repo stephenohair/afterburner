@@ -21,7 +21,6 @@ public class MyUnmarshaller {
 	private JAXBContext jaxbContext;
 	private Unmarshaller unmarshaller;
 
-	@SuppressWarnings("unchecked")
 	public MyUnmarshaller() {
 
 		try {

@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Date;
 import java.util.TimerTask;
 
 import com.ohair.stephen.jaxb.HardwareMonitorType;
@@ -18,9 +17,9 @@ import com.ohair.stephen.jaxb.HardwareMonitorType;
  */
 public class StatsRetriever extends TimerTask {
 
-	private MyUnmarshaller um;
-	private SerialComms comms;
-	private Configuration config;
+	private final MyUnmarshaller um;
+	private final SerialComms comms;
+	private final Configuration config;
 
 	public StatsRetriever() {
 
@@ -31,11 +30,7 @@ public class StatsRetriever extends TimerTask {
 
 	@Override
 	public void run() {
-		App.getController().appendTxtAreaLogOutput(
-				"Timer task started");
 		completeTask();
-		App.getController().appendTxtAreaLogOutput(
-				"Timer task finished");
 	}
 
 	private void completeTask() {
@@ -60,15 +55,11 @@ public class StatsRetriever extends TimerTask {
 			Util.printHardwareMonitor(hmt);
 
 		} catch (MalformedURLException e) {
-			App.getController().appendTxtAreaLogOutput(e.getMessage());
-			App.getController().appendTxtAreaLogOutput("cancelling task");
-			this.cancel();
-			App.getController().setStartEnabled(true);
+			App.getController().appendTxtAreaLogOutput(
+					"ERROR - " + e.getMessage());
 		} catch (IOException e) {
-			App.getController().appendTxtAreaLogOutput(e.getMessage());
-			App.getController().appendTxtAreaLogOutput("cancelling task");
-			this.cancel();
-			App.getController().setStartEnabled(true);
+			App.getController().appendTxtAreaLogOutput(
+					"ERROR - " + e.getMessage());
 		}
 	}
 }

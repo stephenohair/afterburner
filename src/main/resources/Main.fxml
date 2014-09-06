@@ -18,5 +18,6 @@
       <Button fx:id="btnSend" layoutX="344.0" layoutY="676.0" mnemonicParsing="false" onAction="#sendTestMessage" text="send" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="344.0" AnchorPane.topAnchor="676.0" />
       <Label layoutX="20.0" layoutY="681.0" text="Serial test:" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="676.0" />
       <Label layoutX="743.0" layoutY="681.0" text="Server:" AnchorPane.bottomAnchor="23.0" AnchorPane.rightAnchor="139.0" />
+      <Button fx:id="btnClear" layoutX="828.0" layoutY="71.0" mnemonicParsing="false" onAction="#clearLog" text="clear log" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="71.0" />
    </children>
 </AnchorPane>
