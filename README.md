@@ -49,9 +49,11 @@ In order to access the serial comms port for Linux you need to install librxtxja
 
 To install the serial linux libraries:
 
-#!bash
+```
+#!debian
 
 sudo apt-get install librxtx-java
+```
 
 You then make a reference to RXTXcomm.jar on your classpath which is found under /usr/share/java/RXTXcomm.jar.
 
