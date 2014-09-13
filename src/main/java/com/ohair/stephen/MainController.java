@@ -11,15 +11,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class MainController implements Initializable {
 
 	@FXML
-	private Button btnStart;
+	private Button btnConnect;
 	@FXML
-	private Button btnStop;
+	private Button btnDisconnect;
 	@FXML
 	private Button btnSend;
 	@FXML
@@ -28,6 +29,8 @@ public class MainController implements Initializable {
 	private TextField txtFieldMessage;
 	@FXML
 	private Button btnClear;
+	@FXML
+	private CheckBox chkbxEnableLog;
 
 	private final Configuration config;
 	private StatsRetriever timerTask;
@@ -45,20 +48,20 @@ public class MainController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 	}
 
-	public void start(ActionEvent event) {
-		setStartEnabled(false);
+	public void connect(ActionEvent event) {
+		setConnectionButtonsEnabled(false);
 		timerTask = new StatsRetriever();
 		timer = new Timer(true);
 		timer.scheduleAtFixedRate(timerTask, 0,
 				config.getRefreshIntervalInMillis());
-		System.out.println("Timer task scheduled to repeat every "
-				+ config.getRefreshIntervalInMillis() + "ms");
+		// System.out.println("Timer task scheduled to repeat every "
+		// + config.getRefreshIntervalInMillis() + "ms");
 	}
 
-	public void stop(ActionEvent event) {
+	public void disconnect(ActionEvent event) {
 		timer.cancel();
-		System.out.println("Timer task finished");
-		setStartEnabled(true);
+		// System.out.println("Timer task finished");
+		setConnectionButtonsEnabled(true);
 	}
 
 	public void sendTestMessage(ActionEvent event) {
@@ -69,13 +72,13 @@ public class MainController implements Initializable {
 		comms.sendToSerial(msg);
 	}
 
-	public void setStartEnabled(boolean b) {
+	public void setConnectionButtonsEnabled(boolean b) {
 		if (b) {
-			btnStart.setDisable(false);
-			btnStop.setDisable(true);
+			btnConnect.setDisable(false);
+			btnDisconnect.setDisable(true);
 		} else {
-			btnStart.setDisable(true);
-			btnStop.setDisable(false);
+			btnConnect.setDisable(true);
+			btnDisconnect.setDisable(false);
 		}
 	}
 
@@ -92,9 +95,10 @@ public class MainController implements Initializable {
 		Platform.runLater(new Runnable() {
 			@Override
 			public void run() {
-				if (s != null && !s.isEmpty())
-					txtAreaLogOutput.appendText("\n" + sdf.format(new Date())
-							+ " - " + s);
+				if (chkbxEnableLog.isSelected())
+					if (s != null && !s.isEmpty())
+						txtAreaLogOutput.appendText("\n"
+								+ sdf.format(new Date()) + " - " + s);
 			}
 		});
 

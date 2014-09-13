@@ -7,17 +7,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="724.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ohair.stephen.MainController">
+<AnchorPane minHeight="724.0" minWidth="724.0" prefHeight="724.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ohair.stephen.MainController">
    <children>
       <TextArea fx:id="txtAreaLogOutput" editable="false" layoutX="18.0" layoutY="103.0" prefHeight="562.0" prefWidth="515.0" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="103.0" />
       <Label alignment="CENTER" layoutX="18.0" layoutY="71.0" text="Log Output :" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="80.0" />
       <Label layoutX="16.0" layoutY="14.0" prefHeight="54.0" prefWidth="628.0" text="Start up the MSI Afterburner application and then start then MSI Afterburner Server application." wrapText="true" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="14.0" />
-      <Button fx:id="btnStart" layoutX="423.0" layoutY="676.0" mnemonicParsing="false" onAction="#start" text="start" AnchorPane.bottomAnchor="23.0" AnchorPane.rightAnchor="80.0" />
-      <Button fx:id="btnStop" disable="true" layoutX="482.0" layoutY="676.0" mnemonicParsing="false" onAction="#stop" text="stop" AnchorPane.bottomAnchor="23.0" AnchorPane.rightAnchor="20.0" />
-      <TextField fx:id="txtFieldMessage" layoutX="98.0" layoutY="676.0" prefHeight="25.0" prefWidth="239.0" promptText="Type a test message" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="98.0" AnchorPane.topAnchor="676.0" />
-      <Button fx:id="btnSend" layoutX="344.0" layoutY="676.0" mnemonicParsing="false" onAction="#sendTestMessage" text="send" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="344.0" AnchorPane.topAnchor="676.0" />
-      <Label layoutX="20.0" layoutY="681.0" text="Serial test:" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="676.0" />
-      <Label layoutX="743.0" layoutY="681.0" text="Server:" AnchorPane.bottomAnchor="23.0" AnchorPane.rightAnchor="139.0" />
+      <Button fx:id="btnConnect" layoutX="423.0" layoutY="676.0" mnemonicParsing="false" onAction="#connect" text="connect" AnchorPane.bottomAnchor="23.0" AnchorPane.rightAnchor="120.0" />
+      <Button fx:id="btnDisconnect" disable="true" layoutX="482.0" layoutY="676.0" mnemonicParsing="false" onAction="#disconnect" text="disconnect" AnchorPane.bottomAnchor="23.0" AnchorPane.rightAnchor="20.0" />
+      <TextField fx:id="txtFieldMessage" layoutX="98.0" layoutY="676.0" prefHeight="25.0" prefWidth="239.0" promptText="Type a test message" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="98.0" />
+      <Button fx:id="btnSend" layoutX="344.0" layoutY="676.0" mnemonicParsing="false" onAction="#sendTestMessage" text="send" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="344.0" />
+      <Label layoutX="20.0" layoutY="681.0" text="Serial test:" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="20.0" />
+      <Label layoutX="743.0" layoutY="681.0" text="Statistics Server:" AnchorPane.bottomAnchor="23.0" AnchorPane.rightAnchor="200.0" />
       <Button fx:id="btnClear" layoutX="828.0" layoutY="71.0" mnemonicParsing="false" onAction="#clearLog" text="clear log" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="71.0" />
+      <CheckBox fx:id="chkbxEnableLog" layoutX="692.0" layoutY="74.0" mnemonicParsing="false" text="enable logging" AnchorPane.rightAnchor="149.0" AnchorPane.topAnchor="75.0" />
    </children>
 </AnchorPane>
