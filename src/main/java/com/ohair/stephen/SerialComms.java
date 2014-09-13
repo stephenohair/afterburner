@@ -3,6 +3,8 @@ package com.ohair.stephen;
 import jssc.SerialPort;
 import jssc.SerialPortException;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class SerialComms {
 
 	private final SerialPort port;
@@ -22,6 +24,9 @@ public class SerialComms {
 
 	public void sendToSerial(String message) {
 		try {
+			// pad message to 32 chars if it isn't already
+			StringUtils.rightPad(message, 32);
+
 			App.getController().appendTxtAreaLogOutput(
 					"Port opened: " + port.openPort());
 			App.getController().appendTxtAreaLogOutput(
