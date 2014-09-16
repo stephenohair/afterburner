@@ -31,7 +31,6 @@ public class App extends Application {
 					App.class.getClassLoader().getResource("application.css")
 							.toExternalForm());
 			primaryStage.setScene(scene);
-			// primaryStage.setResizable(false);
 			primaryStage.setTitle("Afterburner Client v1.0.0");
 			primaryStage.show();
 		} catch (Exception e) {

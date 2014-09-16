@@ -54,13 +54,10 @@ public class MainController implements Initializable {
 		timer = new Timer(true);
 		timer.scheduleAtFixedRate(timerTask, 0,
 				config.getRefreshIntervalInMillis());
-		// System.out.println("Timer task scheduled to repeat every "
-		// + config.getRefreshIntervalInMillis() + "ms");
 	}
 
 	public void disconnect(ActionEvent event) {
 		timer.cancel();
-		// System.out.println("Timer task finished");
 		setConnectionButtonsEnabled(true);
 	}
 
