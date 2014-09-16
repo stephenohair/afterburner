@@ -54,9 +54,7 @@ This is only required if yo plan to run this on a Linux box and remotely access 
 
 To install the serial linux libraries:
 
-```
-#!debian
-
+```bash
 sudo apt-get install librxtx-java
 ```
 
@@ -65,9 +63,7 @@ You then make a reference to RXTXcomm.jar on your classpath which is found under
 ### Compiling ###
 To compile run : 
 
-```
-#!java
-
+```bash
 mvn clean jfx:jar
 ```
 
@@ -80,9 +76,7 @@ Start up both the MSI Afterburner & Remote server applications.
 Open up a Windows command prompt and run the jar.
 
 
-```
-#!java
-
+```bash
 javaw.exe -jar afterburner-client-1.0.0-SNAPSHOT-jfx.jar
 ```
 
@@ -104,8 +98,6 @@ It looks like this :
 
 
 ```
-#!java
-
 FPS:60  GPU1:88
 CPU:99  GPU2:79
 ```
@@ -113,8 +105,6 @@ CPU:99  GPU2:79
 **Note 1** : If you haven't configured MSI Afterburner to display framerate a TEMP stat will be displayed instead. 
 
 ```
-#!java
-
 TMP:47  GPU1:88
 CPU:99  GPU2:79
 ```
@@ -122,8 +112,6 @@ CPU:99  GPU2:79
 **Note 2** : If you have a single gfx card then it will display RAM usage instead.
 
 ```
-#!java
-
 FPS:60  GPU1:88
 CPU:99  RAM:2305
 ```
@@ -132,7 +120,6 @@ CPU:99  RAM:2305
 * Make the MessageWriter configurable for multiple display sizes
 * Add configurable log level
 * Make configuration use an external configuration and configure a default config
-* Add a simple JavaFX gui
 
 ### Who do I talk to? ###
 
