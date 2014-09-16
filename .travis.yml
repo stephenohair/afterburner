@@ -1,2 +1,2 @@
 language: java
-mvn jfx:jar -DskipTests=true
+script: mvn jfx:jar -DskipTests=true
