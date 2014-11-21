@@ -14,7 +14,7 @@ This repo contains the Java component of the afterburner-client. You can run thi
 ### What does it do? ###
 It sends MSI Afterburner monitoring statistics to an Ardiuno based device over USB serial.
 
-![IMG_20140616_225307.jpg](https://bitbucket.org/repo/anxBzb/images/401267453-IMG_20140616_225307.jpg)
+![alt tag](https://raw.github.com/SuperEvenSteven/afterburner-client/master/imgs/side.jpg)
 
 ### How does it work? ###
 There are three parts to this project :
@@ -25,7 +25,7 @@ There are three parts to this project :
 
 This basic diagram attempts to describe those parts :
 
-![afterburner-client.png](https://bitbucket.org/repo/anxBzb/images/2579804272-afterburner-client.png)
+![alt tag](https://raw.github.com/SuperEvenSteven/afterburner-client/master/imgs/diagram.png)
 
 It sends serial messages over a configured comms port and these messages can be used however the ardiuno device likes i.e. LCD display, LEDs, speaker alerts, fan power control module, your imagination. The ardiuno coding part is for you to write depending on what stats it receives. I've just used the simple LCD serial example provided by Ardiuno. This was perfect for my device where I just wanted to display any receved serial messages straight to my LCD 16x2 character display.
 
@@ -128,6 +128,6 @@ CPU:99  RAM:2305
 ### More Ardiuno Pics ###
 I used a Teensy to build this device. The plastic housing is an old ipod nano box and the stand is a cheap soldering iron stand. I cut out cardboard templates for the front and back and sealed it with black electrical tape.
 
-![IMG_20140616_225252.jpg](https://bitbucket.org/repo/anxBzb/images/2893224317-IMG_20140616_225252.jpg)
-![IMG_20140616_225351.jpg](https://bitbucket.org/repo/anxBzb/images/198268459-IMG_20140616_225351.jpg)
-![IMG_20140616_225320.jpg](https://bitbucket.org/repo/anxBzb/images/2564839505-IMG_20140616_225320.jpg)
+![alt tag](https://raw.github.com/SuperEvenSteven/afterburner-client/master/imgs/front.jpg)
+![alt tag](https://raw.github.com/SuperEvenSteven/afterburner-client/master/imgs/front2.jpg)
+![alt tag](https://raw.github.com/SuperEvenSteven/afterburner-client/master/imgs/back.jpg)
