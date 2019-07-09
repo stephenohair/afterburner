@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>afterburner-jaxb</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
