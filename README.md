@@ -52,13 +52,13 @@ sudo apt-get install librxtx-java
 You then make a reference to RXTXcomm.jar on your classpath which is found under /usr/share/java/RXTXcomm.jar.
 
 ### Compiling ###
-To compile run : 
+To compile and generate an executable fat jar run : 
 
 ```bash
-mvn clean jfx:jar
+mvn clean package
 ```
 ### Installation ###
-Copy the executable JAR in the '''target/afterburner-client-bundled-1.0.0-SNAPSHOT.jar''' directory. You will need to copy the jar to the Windows PC running MSI Afterburner & Remote Server in order to run this client application.
+Copy the executable JAR ```afterburner/afterburner-client/target/afterburner-client-bundled-1.0.0-SNAPSHOT.jar``` to the PC running MSI Afterburner & Remote Server in order to run this client application.
 
 ### Running the Application ###
 

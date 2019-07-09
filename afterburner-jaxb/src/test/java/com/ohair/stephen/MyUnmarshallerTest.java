@@ -17,7 +17,7 @@ public class MyUnmarshallerTest {
     @Test
     public void testUnmarshalIsNotNull() {
         MyUnmarshaller unmarshaller = new MyUnmarshaller();
-        InputStream is = MyUnmarshallerTest.class.getClassLoader().getResourceAsStream("sample-dual-gfx.xml");
+        InputStream is = MyUnmarshallerTest.class.getClassLoader().getResourceAsStream("sample-gfx.xml");
         HardwareMonitorType hmt = unmarshaller.unmarshal(is);
         assertNotNull(hmt);
     }

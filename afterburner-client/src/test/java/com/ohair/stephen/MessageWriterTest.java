@@ -16,7 +16,7 @@ public class MessageWriterTest {
 	@Test
 	public void testGetStatsInfoGivenValidDataFromDualGfxCardReturnsValidMessage() {
 		MyUnmarshaller unmarshaller = new MyUnmarshaller();
-		InputStream is = MyUnmarshallerTest.class.getClassLoader()
+		InputStream is = MessageWriterTest.class.getClassLoader()
 				.getResourceAsStream("sample-dual-gfx.xml");
 		HardwareMonitorType hmt = unmarshaller.unmarshal(is);
 		Configuration config = new Configuration();
@@ -29,7 +29,7 @@ public class MessageWriterTest {
 	@Test
 	public void testGetStatsInfoGivenValidDataFromSingleGfxCardReturnsValidMessage() {
 		MyUnmarshaller unmarshaller = new MyUnmarshaller();
-		InputStream is = MyUnmarshallerTest.class.getClassLoader()
+		InputStream is = MessageWriterTest.class.getClassLoader()
 				.getResourceAsStream("sample-single-gfx.xml");
 		HardwareMonitorType hmt = unmarshaller.unmarshal(is);
 		Configuration config = new Configuration();
