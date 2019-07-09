@@ -1,31 +1,22 @@
-# Afterburner-Client 
+[![Build Status](https://travis-ci.org/SuperEvenSteven/afterburner.svg)](https://travis-ci.org/SuperEvenSteven/afterburner/builds)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+# Afterburner
 
-### Licensing & Copyright ###
-The code found under this repository falls under GPL v3 licensing. Please see LICENSE.TXT for more information. Use of the MSI Afterburner software including extensions/tools fall under their own respective license(s) as defined by Micro-Star International.
-
-
-### Master Build Status ###
-
-<a href='https://travis-ci.org/SuperEvenSteven/afterburner-client/builds'><img src='https://travis-ci.org/SuperEvenSteven/afterburner-client.svg?branch=master'></a>
-
-### What is this repository for? ###
-This repo contains the Java component of the afterburner-client. You can run this on either Linux/Windows and it connects to both MSI Afterburner's Remote Server PC application and an Arduino device over serial. 
+This is a Java-FX based desktop application (Windows/Linux) that connects the MSI Afterburner server and forwards the published statistics to an Arduino-based LCD device. 
 
 ### What does it do? ###
 It sends MSI Afterburner monitoring statistics to an Ardiuno based device over USB serial.
-
-![alt tag](https://raw.github.com/SuperEvenSteven/afterburner-client/master/imgs/side.jpg)
 
 ### How does it work? ###
 There are three parts to this project :
 
 1. An Arduino device with a 16x2 display (but not limited to)
-2. My afterburner-client which is installed on the Windows PC to be monitored (this project code)
+2. My afterburner client application which is installed on the Windows PC to be monitored (this project code)
 3. MSI Afterburner GUI & MSI Afterburner Remote Server installed on the Windows PC to be monitored
 
 This basic diagram attempts to describe those parts :
 
-![alt tag](https://raw.github.com/SuperEvenSteven/afterburner-client/master/imgs/diagram.png)
+![alt tag](imgs/diagram.png)
 
 It sends serial messages over a configured comms port and these messages can be used however the ardiuno device likes i.e. LCD display, LEDs, speaker alerts, fan power control module, your imagination. The ardiuno coding part is for you to write depending on what stats it receives. I've just used the simple LCD serial example provided by Ardiuno. This was perfect for my device where I just wanted to display any receved serial messages straight to my LCD 16x2 character display.
 
@@ -34,11 +25,11 @@ The MSI Afterburner GUI & Remote Server application are available on the [MSI Af
 * MSI Afterburner GUI Version 4.0.0.4606
 * MSI Afterburner Remote Server v1.2.0.0
 
-### How do I get set up? ###
+### Requirements ###
 
 * Install JDK 8.
 * Install maven 3.0
-* Install the appropriate Arduino IDE and drivers for your device
+* Install the appropriate Arduino IDE and serial drivers for your device
 * Install MSI Afterburner & MSI Afterburner Remote Server
 
 ### Configuration ###
@@ -66,8 +57,8 @@ To compile run :
 ```bash
 mvn clean jfx:jar
 ```
-
-This will create an executable JAR under '''target/jfx/app''' and a lib directory under '''target/jfx/app/lib'''. You will need to copy both the jar AND the lib directory to the Windows PC running MSI Afterburner & Remote Server in order to run this client application.
+### Installation ###
+Copy the executable JAR in the '''target/afterburner-client-bundled-1.0.0-SNAPSHOT.jar''' directory. You will need to copy the jar to the Windows PC running MSI Afterburner & Remote Server in order to run this client application.
 
 ### Running the Application ###
 
@@ -77,7 +68,7 @@ Open up a Windows command prompt and run the jar.
 
 
 ```bash
-javaw.exe -jar afterburner-client-1.0.0-SNAPSHOT-jfx.jar
+javaw.exe -jar afterburner-client-bundled-1.0.0-SNAPSHOT.jar
 ```
 
 Observe the terminal output and ensure that you not only see key/value pair listings of Afterburner stats but that it's able to access and publish to the configured comms port.
@@ -116,10 +107,11 @@ FPS:60  GPU1:88
 CPU:99  RAM:2305
 ```
 
-### TODO ###
-* Make the MessageWriter configurable for multiple display sizes
-* Add configurable log level
-* Make configuration use an external configuration and configure a default config
+### Customisation ###
+If you want to add statistics not already exposed by this application, you can modify the [schema](afterburner-jaxb/src/main/resources/schema.xsd). Recompile the afterburner-jaxb module and then you can make reference to the changes in the afterburner-client module code.
+
+## License
+For all files in this repository that don't contain explicit licensing, the MIT license then applies. See the accompanying LICENSE for more details.. Use of the MSI Afterburner software including extensions/tools fall under their own respective license(s) as defined by Micro-Star International.
 
 ### Who do I talk to? ###
 
@@ -128,6 +120,7 @@ CPU:99  RAM:2305
 ### More Ardiuno Pics ###
 I used a Teensy to build this device. The plastic housing is an old ipod nano box and the stand is a cheap soldering iron stand. I cut out cardboard templates for the front and back and sealed it with black electrical tape.
 
-![alt tag](https://raw.github.com/SuperEvenSteven/afterburner-client/master/imgs/front.jpg)
-![alt tag](https://raw.github.com/SuperEvenSteven/afterburner-client/master/imgs/front2.jpg)
-![alt tag](https://raw.github.com/SuperEvenSteven/afterburner-client/master/imgs/back.jpg)
+![alt tag](imgs/side.jpg)
+![alt tag](imgs/front.jpg)
+![alt tag](imgs/front2.jpg)
+![alt tag](imgs/back.jpg)
