@@ -108,7 +108,7 @@ CPU:99  RAM:2305
 ```
 
 ### Customisation ###
-If you want to add statistics not already exposed by this application, you can modify the [schema](afterburner-jaxb/src/main/resources/schema.xsd). Recompile the afterburner-jaxb module and then you can make reference to the changes in the afterburner-client module code.
+If you want to add statistics not already exposed by this application, you can modify the [schema](afterburner/src/main/resources/schema.xsd). Once you generate sources ```mvn generate-sources``` the new JAXB generated classes will be available for use as Java objects.
 
 ## License
 For all files in this repository that don't contain explicit licensing, the MIT license then applies. See the accompanying LICENSE for more details.. Use of the MSI Afterburner software including extensions/tools fall under their own respective license(s) as defined by Micro-Star International.
