@@ -2,7 +2,7 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 # Afterburner
 
-This is a Java-FX based desktop application (Windows/Linux) that connects the MSI Afterburner server and forwards the published statistics to an Arduino-based LCD device. 
+This is a Java-FX(v12) based desktop application (Windows/Linux) that connects the MSI Afterburner server and forwards the published statistics to an Arduino-based LCD device. 
 
 ### What does it do? ###
 It sends MSI Afterburner monitoring statistics to an Ardiuno based device over USB serial.
@@ -27,7 +27,7 @@ The MSI Afterburner GUI & Remote Server application are available on the [MSI Af
 
 ### Requirements ###
 
-* Install JDK 8.
+* Install JDK 11
 * Install maven 3.0
 * Install the appropriate Arduino IDE and serial drivers for your device
 * Install MSI Afterburner & MSI Afterburner Remote Server
